@@ -28,7 +28,13 @@ public class WordGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentWordTextbox.text = "<color=#FF787B>" + currentWord.Substring(0,currentLetter) + "</color>" + currentWord.Substring(currentLetter);
+        if (level%3==0){
+        currentWordTextbox.text = "<color=#8B70FF>" + currentWord.Substring(0,currentLetter) + "</color>" + "<color=#C50B00>"+currentWord.Substring(currentLetter)+"</color>";
+
+        }else{
+        currentWordTextbox.text = "<color=#8B70FF>" + currentWord.Substring(0,currentLetter) + "</color>" + currentWord.Substring(currentLetter);
+
+        }
         if (currentWord.Length == currentLetter){
             if (!wordInProgress){
                 wordInProgress=true;
